@@ -42,7 +42,7 @@ public class ReportingIO {
         dist3.getIncidents().add(inc8);
         dist3.getIncidents().add(inc9);
         newrep.distToMap(dist3.getName(), dist3);
-        //Adding Districts Newcastle,Durham and London to District List inside Reporting class.
+
 
         while (flag) {
             System.out.println("--------------------------");
@@ -57,6 +57,12 @@ public class ReportingIO {
             switch (choice) {
                 case "1":
                     // here is the code to add data to a district.
+                    System.out.println("The list of Districts have " + newrep.districts.values().size() + " inside.");
+                    System.out.println("-----------------------------------------------------------------------------");
+                    for (String name : newrep.districts.keySet()) {
+                        System.out.println(name);
+                    }
+                    System.out.println("--------------");
                     District district1 = inputDistrict();
                     newrep.districts.put(district1.getName(), district1 );
                     System.out.println(newrep.districts.values());
@@ -64,19 +70,30 @@ public class ReportingIO {
 
                 case "2":
                     // here is the code to add data to incident.
-                    System.out.println("In order to create an Incident you have to assign it to a District first"
-                            + '\n' + "If the District does not exists it will be created automatically.");
-                    System.out.println(" ");
+                    System.out.println("--------------------------------------------------------------------");
+                    System.out.println("| In order to add an Incident you have to assign it to a District  |");
+                    System.out.println("| from the list below.                                             |");
+                    System.out.println("| If the District does not exist it will be created automatically. |");
+                    System.out.println("--------------------------------------------------------------------");
+                    System.out.println("District List: ");
+                    System.out.println("---------------");
+                    for (String name : newrep.districts.keySet()) {
+                        System.out.println(name);
+                    }
+                    System.out.println("-------------------------------------");
                     System.out.println("Please enter the name of the District: ");
                     String distname = sc.nextLine();
 
                     if(newrep.getDistricts().containsKey(distname)) {
                         newrep.addIncident(distname, inputIncident());
+                        System.out.println("You have successfully added an Incident to " + distname );
                     }else   {
                         District district = new District(distname);
                         district.getIncidents().add(inputIncident());
                         newrep.distToMap(distname, district);
+                        System.out.println("You have successfully created the District " + distname + " with Incident");
                     }
+
                     break;
 
                 case "3":
@@ -125,7 +142,8 @@ public class ReportingIO {
 
     public District inputDistrict(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the name of the district: ");
+        System.out.println("Please enter the name of the new District: ");
+        System.out.println();
         String name = sc.nextLine();
         return new District(name);
     }
