@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-
-
 public class ReportingIO {
 
     public static void main(String[] args) {
@@ -27,12 +25,23 @@ public class ReportingIO {
             switch (choice) {
                 case "1":
                     // here is the code to add data to a district.
-
+                    District district1 = inputDistrict();
+                    newrep.districts.put(district1.getName(), district1 );
+                    System.out.println(newrep.districts.values());
                     break;
 
                 case "2":
                     // here is the code to add data to incident.
-
+                    String distname = sc.nextLine();
+                    //newrep.getDistricts().put(district.getName(),district);
+                    //System.out.println(newrep.getDistricts().values());
+                    if(newrep.getDistricts().containsKey(distname)) {
+                        newrep.addIncident(distname, inputIncident());
+                    }else   {
+                        District district = new District(distname);
+                        district.getIncidents().add(inputIncident());
+                        newrep.distToMap(distname, district);
+                    }
                     break;
 
                 case "3":
@@ -43,7 +52,7 @@ public class ReportingIO {
                     • The largest value incident ever recorded.
                     • A list of all incidents recorded with value greater than a given amount of money.
                     */
-
+                    System.out.println(newrep.districts.values());
                     break;
 
                 case "4":
@@ -62,9 +71,6 @@ public class ReportingIO {
     public Incident inputIncident() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Please enter the district which the incident happened: ");
-        String district = sc.nextLine();
-
         System.out.println("Enter the value of the incident: ");
         double value = sc.nextDouble();
 
@@ -82,6 +88,11 @@ public class ReportingIO {
 
     }
 
-
+    public District inputDistrict(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the name of the district: ");
+        String name = sc.nextLine();
+        return new District(name);
+    }
 
 }

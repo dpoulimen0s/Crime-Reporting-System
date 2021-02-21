@@ -31,8 +31,6 @@ public class District {
         this.incidents = incidents;
     }
 
-
-
     public Incident highestval() {
         double lastval = 0.0;
         Incident tmp = null;
@@ -47,7 +45,6 @@ public class District {
         return tmp;
     }
 
-
     public double averVal(int year1) {
         double sum = 0.0;
         int i = 0;
@@ -60,7 +57,6 @@ public class District {
         }
         return sum/i;
     }
-
 
     @Override
     public String toString() {
