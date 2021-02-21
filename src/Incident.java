@@ -55,11 +55,6 @@ public class Incident {
 
     @Override
     public String toString() {
-        return "Incident{" +
-                "value=" + value +
-                ", postcode='" + postcode + '\'' +
-                ", month='" + month + '\'' +
-                ", year=" + year +
-                '}';
+        return "    Incident: Monetary Value=" + value + ", Postal Code='" + postcode + '\'' + ", Month='" + month + '\'' + ", Year=" + year + '\n';
     }
 }

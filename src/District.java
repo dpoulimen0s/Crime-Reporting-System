@@ -60,10 +60,7 @@ public class District {
 
     @Override
     public String toString() {
-        return "District{" +
-                "name='" + name + '\'' +
-                ", incidents=" + incidents +
-                '}';
+        return "District: " + name + '\n' + "   Incidents: "+ '\n' + "  " + incidents + '\n';
     }
 }
 

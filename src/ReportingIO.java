@@ -12,6 +12,38 @@ public class ReportingIO {
         Scanner sc = new Scanner(System.in);
         boolean flag = true;
 
+        //Sample Data for Testing.
+        //District Newcastle with incidents.
+        District dist1 = new District("Newcastle");
+        Incident inc1 = new Incident(585.5,"ne12ja","June",2018);
+        Incident inc2 = new Incident(5065.3,"ne12km","July",2019);
+        Incident inc3 = new Incident(10127.24,"ne1fj2","August",2020);
+        dist1.getIncidents().add(inc1);
+        dist1.getIncidents().add(inc2);
+        dist1.getIncidents().add(inc3);
+        newrep.distToMap(dist1.getName(), dist1);
+
+        //District Durham with incidents.
+        District dist2 = new District("Durham");
+        Incident inc4 = new Incident(1050,"dh1t2m","june",2010);
+        Incident inc5 = new Incident(5050.5,"dh125s","january",2015);
+        Incident inc6 = new Incident(15056.5,"dh11aq","october",2020);
+        dist2.getIncidents().add(inc4);
+        dist2.getIncidents().add(inc5);
+        dist2.getIncidents().add(inc6);
+        newrep.distToMap(dist2.getName(), dist2);
+
+        //District London with incidents.
+        District dist3 = new District("London");
+        Incident inc7 = new Incident(20000,"w1127f","september",2013);
+        Incident inc8 = new Incident(3560.5,"w11f32","sctober",2017);
+        Incident inc9 = new Incident(585.5,"w11n4j","november",2019);
+        dist3.getIncidents().add(inc7);
+        dist3.getIncidents().add(inc8);
+        dist3.getIncidents().add(inc9);
+        newrep.distToMap(dist3.getName(), dist3);
+        //Adding Districts Newcastle,Durham and London to District List inside Reporting class.
+
         while (flag) {
             System.out.println("--------------------------");
             System.out.println("| 1. Enter District data |");
@@ -32,9 +64,12 @@ public class ReportingIO {
 
                 case "2":
                     // here is the code to add data to incident.
+                    System.out.println("In order to create an Incident you have to assign it to a District first"
+                            + '\n' + "If the District does not exists it will be created automatically.");
+                    System.out.println(" ");
+                    System.out.println("Please enter the name of the District: ");
                     String distname = sc.nextLine();
-                    //newrep.getDistricts().put(district.getName(),district);
-                    //System.out.println(newrep.getDistricts().values());
+
                     if(newrep.getDistricts().containsKey(distname)) {
                         newrep.addIncident(distname, inputIncident());
                     }else   {
