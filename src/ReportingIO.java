@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ReportingIO {
@@ -17,7 +20,7 @@ public class ReportingIO {
         //District Newcastle with incidents.
         District dist1 = new District("NEWCASTLE");
         Incident inc1 = new Incident(585.5,"NE12JA","JUNE",2018);
-        Incident inc2 = new Incident(5065.3,"NE12KM","JULY",2019);
+        Incident inc2 = new Incident(5065.3,"NE12KM","JULY",2020);
         Incident inc3 = new Incident(10127.24,"NE1FJ2","MARCH",2020);
         dist1.getIncidents().add(inc1);
         dist1.getIncidents().add(inc2);
@@ -59,7 +62,7 @@ public class ReportingIO {
 
             switch (choice) {
                 case "1":
-                    // here is the code to add data to a district.
+
                     System.out.println("The list of Districts have " + newrep.districts.values().size() + " inside.");
                     System.out.println("-----------------------------------------------------------------------------");
                     for (String name : newrep.districts.keySet()) {
@@ -67,13 +70,19 @@ public class ReportingIO {
                     }
                     System.out.println("--------------");
                     District district1 = inputDistrict();
+                    if (newrep.districts.containsKey(district1.getName())) {
+                        System.out.println("The District " + district1.getName() + " is already in the District list.");
+                        System.out.println("Select option 2 from the main menu to add an Incident to " +
+                                ""+ district1.getName());
+                        break;
+                    }
                     newrep.districts.put(district1.getName(), district1 );
                     System.out.println("You have successfully created a new District!");
                     System.out.println(newrep.districts.values());
                     break;
 
                 case "2":
-                    // here is the code to add data to incident.
+
                     System.out.println("--------------------------------------------------------------------");
                     System.out.println("| In order to add an Incident you have to assign it to a District  |");
                     System.out.println("| from the list below.                                             |");
@@ -103,11 +112,7 @@ public class ReportingIO {
 
                 case "3":
 
-                    /* here is the code to take reports about:
-                    • The district with the largest average value incident for a given year.
-                    • The largest value incident ever recorded.
-                    • A list of all incidents recorded with value greater than a given amount of money.
-                    */
+
                     Scanner sc1 = new Scanner(System.in);
 
                     System.out.println("----------------------------------------------------------------------------");
@@ -127,12 +132,15 @@ public class ReportingIO {
                             break ;
                         case "2":
 
+
                             break ;
 
                         case "3":
+
                             break;
 
                         case "4":
+
                             break;
 
                         default:

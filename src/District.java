@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class District {
     private String name;
@@ -56,6 +57,19 @@ public class District {
             }
         }
         return sum/i;
+    }
+
+    public List<Incident> valuechk(){
+        Scanner sc = new Scanner(System.in);
+        List<Incident> listIncMoney = new ArrayList<>();
+        System.out.println("Please enter the amount of money to check: ");
+        double ammoney = sc.nextDouble();
+        for (Incident incident: incidents) {
+            if (incident.getValue() > ammoney) {
+                listIncMoney.add(incident);
+            }
+        }
+        return listIncMoney;
     }
 
     @Override
