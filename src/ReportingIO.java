@@ -50,7 +50,6 @@ public class ReportingIO {
 
         while (flag) {
 
-            System.out.println(" Crime Reporting System ");
             System.out.println("--------------------------");
             System.out.println("| 1. Enter District data |");
             System.out.println("| 2. Enter Incident data |");
