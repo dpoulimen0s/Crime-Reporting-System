@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Reporting {
     Map<String, District> districts;
@@ -30,7 +27,7 @@ public class Reporting {
         List<Incident> allIncidents = new ArrayList<>();
 
         for(District district : districts.values()) {
-            allIncidents.addAll(district.getIncidents());
+            allIncidents.addAll((Collection<? extends Incident>) district.highestval());
         }
         return allIncidents;
     }

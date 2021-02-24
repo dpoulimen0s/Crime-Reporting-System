@@ -133,7 +133,6 @@ public class ReportingIO {
                         case "2":
                             System.out.println("The largest value ever recorded is: ");
                             newrep.largestValInc();
-
                             break ;
 
                         case "3":

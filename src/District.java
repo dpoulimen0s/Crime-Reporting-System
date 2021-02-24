@@ -36,7 +36,7 @@ public class District {
         double lastval = 0.0;
         Incident tmp = null;
 
-        for (Incident incident: incidents) {
+        for (Incident incident: getIncidents()) {
             if (incident.getValue() > lastval) {
                 lastval = incident.getValue();
                 tmp = incident;
