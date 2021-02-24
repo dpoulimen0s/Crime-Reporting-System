@@ -111,7 +111,6 @@ public class ReportingIO {
 
                 case "3":
 
-
                     Scanner sc1 = new Scanner(System.in);
 
                     System.out.println("----------------------------------------------------------------------------");
@@ -127,14 +126,19 @@ public class ReportingIO {
                     switch (choice1) {
 
                         case "1":
+                            System.out.println("Please enter the year (e.g 2010): ");
+                            String name = sc1.nextLine();
 
                             break ;
                         case "2":
-
+                            System.out.println("The largest value ever recorded is: ");
+                            newrep.largestValInc();
 
                             break ;
 
                         case "3":
+                            System.out.println("Set the amount of money to check: ");
+                            double amount = sc1.nextDouble();
 
                             break;
 
@@ -146,7 +150,6 @@ public class ReportingIO {
                             System.out.println("Please enter a valid number!");
                             break ;
                     }
-
 
                     break;
 

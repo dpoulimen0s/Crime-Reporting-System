@@ -35,6 +35,21 @@ public class Reporting {
         return allIncidents;
     }
 
+    public void largestValInc(){
+        double lastVal = 0.0;
+        Incident tmp = null;
+        for (Map.Entry<String, District> districtMap : districts.entrySet() ) {
+            for (Incident incident: districtMap.getValue().getIncidents()) {
+                if (incident.getValue() > lastVal){
+                    lastVal = incident.getValue();
+                    tmp = incident;
+                }
+            }
+        }
+        System.out.println(tmp);
+
+    }
+
     @Override
     public String toString() {
         return "Reporting{" +
