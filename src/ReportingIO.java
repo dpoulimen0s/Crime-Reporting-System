@@ -135,8 +135,7 @@ public class ReportingIO {
                             break ;
 
                         case "3":
-
-                            newrep.largestAv();
+                            newrep.listAllIncGreater();
                             break;
 
                         case "4":

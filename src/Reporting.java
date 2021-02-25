@@ -24,6 +24,21 @@ public class Reporting {
     }
 
     public void largestAv(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the year: ");
+        int year = sc.nextInt();
+        double sum = 0.0;
+        int i = 0;
+        for (Map.Entry<String, District> districtMap : districts.entrySet() ) {
+            for (Incident incident : districtMap.getValue().getIncidents()) {
+                if (incident.getYear() == year) {
+                    sum += incident.getValue();
+                    i++;
+
+                }
+            }
+        }
+        System.out.println("The average value for the year " + year + " is " + sum/i);
 
     }
 
@@ -39,6 +54,22 @@ public class Reporting {
             }
         }
         System.out.println(tmp);
+    }
+
+    public void listAllIncGreater(){
+        List<Incident> listIncMoney = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the amount of money to check: ");
+        double ammoney = sc.nextDouble();
+        for (Map.Entry<String, District> districtMap : districts.entrySet() ) {
+            for (Incident incident : districtMap.getValue().getIncidents()) {
+                if (incident.getValue() > ammoney) {
+                    listIncMoney.add(incident);
+                }
+            }
+        }
+        System.out.println("Below is the list which contains incidents with values greater than " + ammoney + '\n');
+        System.out.println(listIncMoney);
     }
 
     @Override
