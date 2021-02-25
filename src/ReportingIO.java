@@ -2,14 +2,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ **This is a class for representing a ReportingIO object. This has methods
+ *to set a District and an Incident.It also contains the main method which calls a menu that i created.
+ *At the start of the menu() method creates 3 Districts with 3 Incidents each in order to perform the tests.
+ *Then a menu appears.
+ *@author Dimitris Poulimenos
+ */
 public class ReportingIO {
-
+    /**
+     *This is the main method in the ReportingIO class.This method runs the program.
+     */
     public static void main(String[] args) {
 
         new ReportingIO().menu();
     }
-
+    /**
+     *This is a method which contains everything about the menu and its values.It has the sample data for testing, menu
+     * and the sub menu for every option.
+     */
     private void menu() {
 
         Reporting newrep = new Reporting();
@@ -163,6 +174,9 @@ public class ReportingIO {
         }
     }
 
+    /**
+     *This is a method which returns a new Incident which is created from the user's input.
+     */
     public Incident inputIncident() {
         Scanner sc = new Scanner(System.in);
 
@@ -183,6 +197,9 @@ public class ReportingIO {
 
     }
 
+    /**
+     *This is a method which returns a new District which is created from the user's input.
+     */
     public District inputDistrict(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the name of the new District: ");
