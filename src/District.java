@@ -35,15 +35,13 @@ public class District {
     public Incident highestval() {
         double lastval = 0.0;
         Incident tmp = null;
-
-        for (Incident incident: getIncidents()) {
+        for (Incident incident: incidents) {
             if (incident.getValue() > lastval) {
                 lastval = incident.getValue();
                 tmp = incident;
-
             }
         }
-        return tmp;
+        return  tmp;
     }
 
     public double averVal(int year1) {

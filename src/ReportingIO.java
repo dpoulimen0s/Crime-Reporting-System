@@ -48,6 +48,7 @@ public class ReportingIO {
         newrep.distToMap(dist3.getName(), dist3);
 
 
+
         while (flag) {
 
             System.out.println("--------------------------");
@@ -126,19 +127,16 @@ public class ReportingIO {
                     switch (choice1) {
 
                         case "1":
-                            System.out.println("Please enter the year (e.g 2010): ");
-                            String name = sc1.nextLine();
-
+                            newrep.largestAv();
                             break ;
                         case "2":
-                            System.out.println("The largest value ever recorded is: ");
+                            System.out.println("The largest value ever recorded is: " + '\n');
                             newrep.largestValInc();
                             break ;
 
                         case "3":
-                            System.out.println("Set the amount of money to check: ");
-                            double amount = sc1.nextDouble();
 
+                            newrep.largestAv();
                             break;
 
                         case "4":

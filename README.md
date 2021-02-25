@@ -26,9 +26,6 @@ clone it to your IDE.
 ## Running the tests
 
 I have created  3 Districts where each of the Districts has 3 Incidents hardcoded in order to test my program.
-
-### Break down into end to end tests
-
 These hardcoded sample data that I have provided are trying to test the classes, and the complexity of my methods.
 
 ## Built With

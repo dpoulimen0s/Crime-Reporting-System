@@ -23,13 +23,8 @@ public class Reporting {
         districts.put(name,district);
     }
 
-    public List<Incident> incidentsList(){
-        List<Incident> allIncidents = new ArrayList<>();
+    public void largestAv(){
 
-        for(District district : districts.values()) {
-            allIncidents.addAll((Collection<? extends Incident>) district.highestval());
-        }
-        return allIncidents;
     }
 
     public void largestValInc(){
@@ -44,7 +39,6 @@ public class Reporting {
             }
         }
         System.out.println(tmp);
-
     }
 
     @Override
