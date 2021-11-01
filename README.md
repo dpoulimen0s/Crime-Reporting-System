@@ -40,5 +40,5 @@ These hardcoded sample data that I have provided are trying to test the classes,
 
 ## License
 
-This project is licensed under the Newcastle University License - see the [LICENSE](LICENSE.md) file for details
+This project is licensed under the Newcastle University License - see the [LICENSE](https://github.com/dpoulimen0s/Crime-Reporting-System/blob/master/LICENSE) file for details
 
